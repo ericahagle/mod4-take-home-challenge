@@ -9,7 +9,7 @@ const ArticlePreview = ({ date, title, description, imageUrl, source }) => {
       <p>{source.name}</p>
       <p>{description}</p>
     </div>
-  )
-}
+  );
+};
 
 export default ArticlePreview;
