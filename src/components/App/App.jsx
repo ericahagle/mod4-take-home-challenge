@@ -1,12 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import './App.css';
-import mockData from '../../mock-data';
+import mockData from '../../mock-data.js';
 import Home from '../Home/Home';
 
 function App() {
   const [ articles, setArticles ] = useState(mockData);
-
 
   return (
     <main className="App">
@@ -16,6 +15,6 @@ function App() {
 	    </Routes>
     </main>
   );
-}
+};
 
 export default App;

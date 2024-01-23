@@ -3,8 +3,6 @@ import './Home.css';
 import ArticlePreview from '../ArticlePreview/ArticlePreview';
 
 const Home = ({ articles }) => {
-  // const uniqueId = uuid();
-
   const articleCards = articles.map(article => (
     <ArticlePreview
       key={uuid()}
