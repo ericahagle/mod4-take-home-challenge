@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import mockData from '../../mock-data.js';
 import Home from '../Home/Home';
+import ArticleDetail from '../ArticleDetail/ArticleDetail.jsx'
 
 function App() {
   const [ articles, setArticles ] = useState(mockData);
@@ -11,7 +12,7 @@ function App() {
     <main className="App">
       <Routes>
         <Route path='/' element={<Home articles={articles}/>} />
-        {/* <Route path='/somepath/:prop' element={anotherElement} /> */}
+        <Route path='/:index' element={<ArticleDetail articles={articles} />} />
 	    </Routes>
     </main>
   );
