@@ -6,7 +6,7 @@ const ArticlePreview = ({ date, title, description, imageUrl, source }) => {
       <img className='preview-image' src={imageUrl} alt={title} />
       <h2>{title}</h2>
       <p>{date}</p>
-      <p>{source.name}</p>
+      {/* <p>{source.name}</p> */}
       <p>{description}</p>
     </div>
   );
