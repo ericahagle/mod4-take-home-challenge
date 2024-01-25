@@ -17,19 +17,30 @@ const Home = ({ articles }) => {
     setSelectedSourceFilter(sourceFilter);
   }
 
-  const articleCards = articles.map((article, index) => (
-    <Link className='article-link' to={`/${index}`} key={uuid()}>
-      <ArticlePreview
-      key={uuid()}
-      date={article.publishedAt}
-      title={article.title}
-      description={article.description}
-      imageUrl={article.urlToImage}
-      source={article.source}
-      onClick={() => selectArticle(selectedArticle)}
-      />
-    </Link>
-  ));
+  const articleCards = articles.map((article, index) => {
+    return (
+      <Link className='article-link' to={`/${index}`} key={uuid()}>
+        <ArticlePreview
+          key={uuid()}
+          date={article.publishedAt}
+          title={article.title}
+          description={article.description}
+          imageUrl={article.urlToImage}
+          source={article.source.name}
+          onClick={() => selectArticle(selectedArticle)}
+        />
+      </Link>
+    )
+  });
+
+  const filteredCards = articleCards.filter((articleCard) => {
+    const cardSource = articleCard.props.children.props.source;
+    if (selectedSourceFilter !== '' && cardSource) {
+      return cardSource === selectedSourceFilter;
+    } else {
+      return true;
+    }
+  })
 
 
   return (
@@ -37,7 +48,7 @@ const Home = ({ articles }) => {
       <Filter
         onSourceFilterChange={handleSourceFilterChange}
       />
-      {articleCards}
+      {filteredCards}
     </div>
   );
 };
