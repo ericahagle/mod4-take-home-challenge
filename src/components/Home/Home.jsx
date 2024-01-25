@@ -3,13 +3,19 @@ import { Link } from 'react-router-dom';
 import { v4 as uuid } from "uuid";
 import './Home.css';
 import ArticlePreview from '../ArticlePreview/ArticlePreview';
+import Filter from '../Filter/Filter';
 
 const Home = ({ articles }) => {
   const [selectedArticle, setSelectedArticle] = useState(null);
+  const [selectedSourceFilter, setSelectedSourceFilter] = useState('');
 
   const selectArticle = (selectedArticle) => {
     setSelectedArticle(selectedArticle);
   };
+
+  const handleSourceFilterChange = (sourceFilter) => {
+    setSelectedSourceFilter(sourceFilter);
+  }
 
   const articleCards = articles.map((article, index) => (
     <Link className='article-link' to={`/${index}`} key={uuid()}>
@@ -28,6 +34,9 @@ const Home = ({ articles }) => {
 
   return (
     <div className='Home'>
+      <Filter
+        onSourceFilterChange={handleSourceFilterChange}
+      />
       {articleCards}
     </div>
   );
