@@ -5,6 +5,7 @@ import mockData from '../../mock-data.js';
 import Home from '../Home/Home';
 import ArticleDetail from '../ArticleDetail/ArticleDetail.jsx';
 import Header from '../Header/Header.jsx';
+import NotFound from '../NotFound/NotFound.jsx';
 
 function App() {
   const [ articles, setArticles ] = useState(mockData);
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home articles={articles}/>} />
         <Route path='/:index' element={<ArticleDetail articles={articles} />} />
+        <Route path='/*' element={<NotFound />} />
 	    </Routes>
     </main>
   );
