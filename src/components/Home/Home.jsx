@@ -42,13 +42,13 @@ const Home = ({ articles }) => {
     }
   })
 
-
   return (
     <div className='Home'>
       <Filter
         onSourceFilterChange={handleSourceFilterChange}
       />
       {filteredCards}
+      {filteredCards.length === 0 && <span className='no-results'>No articles match your search.</span>}
     </div>
   );
 };
