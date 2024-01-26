@@ -19,9 +19,10 @@ const Home = ({ articles }) => {
 
   const articleCards = articles.map((article, index) => {
     return (
-      <Link className='article-link' to={`/${index}`} key={uuid()}>
+
+      <Link className='article-link' to={`/article/${index}`} key={uuid()}>
         <ArticlePreview
-          key={uuid()}
+          key={article.key}
           date={article.publishedAt}
           title={article.title}
           description={article.description}
