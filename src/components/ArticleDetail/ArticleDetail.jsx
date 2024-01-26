@@ -28,13 +28,13 @@ const ArticleDetail = ({ articles, defaultIndex }) => {
     <div className='ArticleDetail'>
       {selectedArticle && (
         <>
-          <img className='preview-image' src={selectedArticle.urlToImage} alt={selectedArticle.title} />
-          <h2>{selectedArticle.title}</h2>
-          <p>{selectedArticle.publishedAt}</p>
+          <img className='detail-image' src={selectedArticle.urlToImage} alt={selectedArticle.title} />
+          <h2 className='detail-title'>{selectedArticle.title}</h2>
+          <p className='detail-date'>{selectedArticle.publishedAt}</p>
           <Link className='link-out' to={selectedArticle.url} target="_blank" key={uuid()} >
-            <p>{selectedArticle.source.name}</p>
+            <p className='detail-source'>{selectedArticle.source.name}</p>
           </Link>
-          <p>{formattedContent}</p>
+          <p className='detail-content'>{formattedContent}</p>
         </>
       )}
     </div>
