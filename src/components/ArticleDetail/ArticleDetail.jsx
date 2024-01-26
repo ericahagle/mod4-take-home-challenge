@@ -5,8 +5,8 @@ import './ArticleDetail.css';
 
 const ArticleDetail = ({ articles, defaultIndex }) => {
   const { index } = useParams();
-  const [selectedArticle, setSelectedArticle] = useState(null);
-  const [formattedContent, setFormattedContent] = useState('');
+  const [ selectedArticle, setSelectedArticle ] = useState(null);
+  const [ formattedContent, setFormattedContent ] = useState('');
 
   useEffect(() => {
     const articleIndex = parseInt(index, 10);

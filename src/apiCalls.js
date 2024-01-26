@@ -1,7 +1,7 @@
 const BASE_URL = 'https://newsapi.org/v2';
 
 const getTopHeadlinesUS = () => {
-  return fetch (BASE_URL + '/top-headlines?country=us')
+  return fetch (BASE_URL + '/top-headlines?country=us&apiKey=1e6f0fc53c7a4b9f9999efabbd374789')
     .then((response) => {
       if(!response.ok) {
         if (response.status >= 400 && response.status < 500) {

@@ -6,8 +6,8 @@ import ArticlePreview from '../ArticlePreview/ArticlePreview';
 import Filter from '../Filter/Filter';
 
 const Home = ({ articles }) => {
-  const [selectedArticle, setSelectedArticle] = useState(null);
-  const [selectedSourceFilter, setSelectedSourceFilter] = useState('');
+  const [ selectedArticle, setSelectedArticle ] = useState(null);
+  const [ selectedSourceFilter, setSelectedSourceFilter ] = useState('');
 
   const selectArticle = (selectedArticle) => {
     setSelectedArticle(selectedArticle);
