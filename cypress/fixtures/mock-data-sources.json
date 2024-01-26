@@ -1,0 +1,77 @@
+{
+  "status": "ok",
+  "sources": [
+      {
+          "id": "abc-news",
+          "name": "ABC News",
+          "description": "Your trusted source for breaking news, analysis, exclusive interviews, headlines, and videos at ABCNews.com.",
+          "url": "https://abcnews.go.com",
+          "category": "general",
+          "language": "en",
+          "country": "us"
+      },
+      {
+          "id": "associated-press",
+          "name": "Associated Press",
+          "description": "The AP delivers in-depth coverage on the international, politics, lifestyle, business, and entertainment news.",
+          "url": "https://apnews.com/",
+          "category": "general",
+          "language": "en",
+          "country": "us"
+      },
+      {
+          "id": "cbs-news",
+          "name": "CBS News",
+          "description": "CBS News: dedicated to providing the best in journalism under standards it pioneered at the dawn of radio and television and continue in the digital age.",
+          "url": "http://www.cbsnews.com",
+          "category": "general",
+          "language": "en",
+          "country": "us"
+      },
+      {
+          "id": "cnn",
+          "name": "CNN",
+          "description": "View the latest news and breaking news today for U.S., world, weather, entertainment, politics and health at CNN",
+          "url": "http://us.cnn.com",
+          "category": "general",
+          "language": "en",
+          "country": "us"
+      },
+      {
+          "id": "nbc-news",
+          "name": "NBC News",
+          "description": "Breaking news, videos, and the latest top stories in world news, business, politics, health and pop culture.",
+          "url": "http://www.nbcnews.com",
+          "category": "general",
+          "language": "en",
+          "country": "us"
+      },
+      {
+          "id": "politico",
+          "name": "Politico",
+          "description": "Political news about Congress, the White House, campaigns, lobbyists and issues.",
+          "url": "https://www.politico.com",
+          "category": "general",
+          "language": "en",
+          "country": "us"
+      },
+      {
+          "id": "reuters",
+          "name": "Reuters",
+          "description": "Reuters.com brings you the latest news from around the world, covering breaking news in business, politics, entertainment, technology, video and pictures.",
+          "url": "http://www.reuters.com",
+          "category": "general",
+          "language": "en",
+          "country": "us"
+      },
+      {
+          "id": "the-washington-post",
+          "name": "The Washington Post",
+          "description": "Breaking news and analysis on politics, business, world national news, entertainment more. In-depth DC, Virginia, Maryland news coverage including traffic, weather, crime, education, restaurant reviews and more.",
+          "url": "https://www.washingtonpost.com",
+          "category": "general",
+          "language": "en",
+          "country": "us"
+      }
+  ]
+}
