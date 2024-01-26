@@ -13,6 +13,14 @@
   text-align: left;
 }
 
+.preview-short-deets, .preview-description {
+  color: #10000a;
+}
+
+.preview-title {
+  color: #0a2b4e;
+}
+
 /* LARGE BREAKPOINT */
 @media screen and (max-width: 1024px) and (min-width: 769px) {
   .ArticlePreview {
