@@ -22,9 +22,10 @@ describe('Functional Tests', () => {
         .should('have.attr', 'src', 'https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/FHECWDYZWLSR4JVXNQYQQFKQE4.JPG&w=1440')
         .should('have.attr', 'alt', 'DeSantis is far from the first to quote something Churchill never said');
       cy.get('.preview-title').contains('DeSantis is far from the first to quote something Churchill never said');
-      cy.get('.preview-date').contains('2024-01-22T18:39:09Z');
-      cy.get('.preview-source').contains('The Washington Post');
+      cy.get('.preview-date').contains('Publish Date: 2024-01-22T18:39:09Z');
+      cy.get('.preview-source').contains('Source: The Washington Post');
       cy.get('.preview-description').contains("Florida's governor, ending his presidential campaign, attributed to the British statesman a quote about 'the courage to continue' that experts say is inaccurate.");
+      cy.get('.preview-click-for-more').contains('Click to see more.');
     });
 
     cy.get('.ArticlePreview').last().within(() => {
@@ -32,9 +33,10 @@ describe('Functional Tests', () => {
         .should('have.attr', 'src', 'https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1329590941.jpg?c=16x9&q=w_800,c_fill')
         .should('have.attr', 'alt', 'H&M pulls school uniform ad in Australia after complaints it sexualized children');
       cy.get('.preview-title').contains('H&M pulls school uniform ad in Australia after complaints it sexualized children');
-      cy.get('.preview-date').contains('2024-01-22T17:14:20Z');
-      cy.get('.preview-source').contains('CNN');
+      cy.get('.preview-date').contains('Publish Date: 2024-01-22T17:14:20Z');
+      cy.get('.preview-source').contains('Source: CNN');
       cy.get('.preview-description').contains("H&M has apologized for and removed a school uniform advertisement in Australia after users on social media complained that it sexualized children.");
+      cy.get('.preview-click-for-more').contains('Click to see more.');
     });
   });
 
@@ -64,9 +66,10 @@ describe('Functional Tests', () => {
         .should('have.attr', 'src', 'https://www.reuters.com/resizer/j-sajSVXWh_dR2pwKx_24VwAyyI=/1920x1005/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/NMCJSHDWWFKGRBQOGTVQNQTXDI.jpg')
         .should('have.attr', 'alt', 'Sunoco to buy NuStar Energy in $7.3 billion all-stock deal');
       cy.get('.preview-title').contains('Sunoco to buy NuStar Energy in $7.3 billion all-stock deal');
-      cy.get('.preview-date').contains('2024-01-22T13:09:10Z');
-      cy.get('.preview-source').contains('Reuters');
+      cy.get('.preview-date').contains('Publish Date: 2024-01-22T13:09:10Z');
+      cy.get('.preview-source').contains('Source: Reuters');
       cy.get('.preview-description').contains("Motor fuels distributor Sunoco <a href=\"https://www.reuters.com/markets/companies/SUN.N\" target=\"_blank\">(SUN.N)</a> said on Monday it would acquire oil and gas transportation service NuStar Energy <a href=\"https://www.reuters.com/markets/companies/NS.N\" targ…");
+      cy.get('.preview-click-for-more').contains('Click to see more.');
     });
 
     cy.get('#select-source')
@@ -81,9 +84,10 @@ describe('Functional Tests', () => {
         .should('have.attr', 'src', 'https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/FHECWDYZWLSR4JVXNQYQQFKQE4.JPG&w=1440')
         .should('have.attr', 'alt', 'DeSantis is far from the first to quote something Churchill never said');
       cy.get('.preview-title').contains('DeSantis is far from the first to quote something Churchill never said');
-      cy.get('.preview-date').contains('2024-01-22T18:39:09Z');
-      cy.get('.preview-source').contains('The Washington Post');
+      cy.get('.preview-date').contains('Publish Date: 2024-01-22T18:39:09Z');
+      cy.get('.preview-source').contains('Source: The Washington Post');
       cy.get('.preview-description').contains("Florida's governor, ending his presidential campaign, attributed to the British statesman a quote about 'the courage to continue' that experts say is inaccurate.");
+      cy.get('.preview-click-for-more').contains('Click to see more.');
     });
 
     cy.get('.ArticlePreview').last().within(() => {
@@ -91,13 +95,14 @@ describe('Functional Tests', () => {
         .should('have.attr', 'src', 'https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1329590941.jpg?c=16x9&q=w_800,c_fill')
         .should('have.attr', 'alt', 'H&M pulls school uniform ad in Australia after complaints it sexualized children');
       cy.get('.preview-title').contains('H&M pulls school uniform ad in Australia after complaints it sexualized children');
-      cy.get('.preview-date').contains('2024-01-22T17:14:20Z');
-      cy.get('.preview-source').contains('CNN');
+      cy.get('.preview-date').contains('Publish Date: 2024-01-22T17:14:20Z');
+      cy.get('.preview-source').contains('Source: CNN');
       cy.get('.preview-description').contains("H&M has apologized for and removed a school uniform advertisement in Australia after users on social media complained that it sexualized children.");
+      cy.get('.preview-click-for-more').contains('Click to see more.');
     });
   });
 
-  it('should render article detail on a new page when an article preview is clicked', () => {
+  it('should render article details on a new page when an article preview is clicked', () => {
     cy.get('.article-link').first().click();
 
     cy.url().should('eq', 'http://localhost:3000/article/0');
@@ -107,9 +112,10 @@ describe('Functional Tests', () => {
         .should('have.attr', 'src', 'https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/FHECWDYZWLSR4JVXNQYQQFKQE4.JPG&w=1440')
         .should('have.attr', 'alt', 'DeSantis is far from the first to quote something Churchill never said');
       cy.get('.detail-title').contains('DeSantis is far from the first to quote something Churchill never said');
-      cy.get('.detail-date').contains('2024-01-22T18:39:09Z');
+      cy.get('.detail-author').contains('By Jonathan Edwards');
+      cy.get('.detail-date').contains('Publish Date: 2024-01-22T18:39:09Z');
       cy.get('.detail-source').contains('The Washington Post');
-      cy.get('.link-out').should('have.attr', 'href', 'https://www.washingtonpost.com/history/2024/01/22/ron-desantis-winston-churchill/');
+      cy.get('.link-out').should('have.attr', 'href', 'https://www.washingtonpost.com/history/2024/01/22/ron-desantis-winston-churchill/').contains('See the full content at The Washington Post');
       cy.get('.detail-content').contains("Ron DeSantis ended his presidential campaign Sunday but promised to keep fighting woke ideology as Floridas governor. To illustrate th… [+3234 chars]");
     });
   });

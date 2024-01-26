@@ -8,13 +8,17 @@
   padding: 20px;
 }
 
-.detail-title, .detail-content, .detail-author, .detail-date {
+.detail-title,
+.detail-content,
+.detail-author,
+.detail-date {
   text-align: left;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-.detail-author, .detail-date {
+.detail-author,
+.detail-date {
   margin-top: -10px;
   text-align: left;
   font-style: italic;
