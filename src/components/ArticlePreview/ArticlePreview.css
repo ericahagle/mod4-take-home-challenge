@@ -13,11 +13,13 @@
   text-align: left;
 }
 
-.preview-short-deets, .preview-description {
+.preview-short-deets,
+.preview-description {
   color: #10000a;
 }
 
-.preview-title, .preview-click-for-more {
+.preview-title,
+.preview-click-for-more {
   color: #0a2b4e;
 }
 
@@ -27,7 +29,8 @@
     grid-template-columns: repeat(2, 2fr);
   }
 
-  .preview-image, .preview-long-deets {
+  .preview-image,
+  .preview-long-deets {
     grid-column-start: 1;
     grid-column-end: 1;
   }
