@@ -1,14 +1,31 @@
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
-import mockData from '../../mock-data.js';
 import Home from '../Home/Home';
 import ArticleDetail from '../ArticleDetail/ArticleDetail.jsx';
 import Header from '../Header/Header.jsx';
 import NotFound from '../NotFound/NotFound.jsx';
+import getTopHeadlinesUS from '../../apiCalls.js';
 
 function App() {
-  const [ articles, setArticles ] = useState(mockData);
+  const [ articles, setArticles ] = useState([]);
+  const [ loading, setLoading ] = useState(true);
+  const [ error, setError ] = useState('');
+
+  useEffect(() => {
+    setLoading(true);
+    getTopHeadlinesUS()
+      .then(data => {
+        setArticles(data.articles)
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      })
+  }, []);
 
   return (
     <main className="App">
