@@ -5,13 +5,15 @@ const ArticlePreview = ({ date, title, description, imageUrl, source }) => {
   return (
     <div className='ArticlePreview'>
       {imageUrl && <img className='preview-image' src={imageUrl} alt={title} />}
-      <div className='preview-short-deets'>
-        <p className='preview-date'>{date}</p>
-        <p className='preview-source'>{source}</p>
+        <div className='preview-short-deets'>
+          <p className='preview-date'>{date}</p>
+          <p className='preview-source'>{source}</p>
+        </div>
+        <div className='preview-long-deets'>
+          <h2 className='preview-title'>{title}</h2>
+          <p className='preview-description'>{description}</p>
+        </div>
       </div>
-      <h2 className='preview-title'>{title}</h2>
-      <p className='preview-description'>{description}</p>
-    </div>
   );
 };
 
