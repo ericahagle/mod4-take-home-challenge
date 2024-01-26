@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { v4 as uuid } from "uuid";
 import './ArticleDetail.css';
 
 const ArticleDetail = ({ articles, defaultIndex }) => {
   const { index } = useParams();
-  const [ selectedArticle, setSelectedArticle ] = useState(null);
-  const [ formattedContent, setFormattedContent ] = useState('');
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [formattedContent, setFormattedContent] = useState('');
 
   useEffect(() => {
     const articleIndex = parseInt(index, 10);
@@ -39,5 +40,21 @@ const ArticleDetail = ({ articles, defaultIndex }) => {
     </div>
   );
 };
+
+ArticleDetail.propTypes = {
+  articles: PropTypes.arrayOf(PropTypes.shape({
+    author: PropTypes.string,
+    content: PropTypes.string,
+    description: PropTypes.string,
+    publishedAt: PropTypes.string,
+    source: PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string
+    }),
+    title: PropTypes.string,
+    url: PropTypes.string,
+    urlToImage: PropTypes.string
+  }))
+}
 
 export default ArticleDetail;
