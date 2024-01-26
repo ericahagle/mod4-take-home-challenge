@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import './Filter.css';
 
 const Filter = ({ onSourceFilterChange }) => {
@@ -43,5 +44,9 @@ const Filter = ({ onSourceFilterChange }) => {
     </div>
   );
 };
+
+Filter.propTypes = {
+  onSourceFilterChange: PropTypes.func.isRequired
+}
 
 export default Filter;

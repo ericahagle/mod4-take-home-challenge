@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { v4 as uuid } from "uuid";
 import './Home.css';
 import ArticlePreview from '../ArticlePreview/ArticlePreview';
 import Filter from '../Filter/Filter';
 
 const Home = ({ articles }) => {
-  const [ selectedArticle, setSelectedArticle ] = useState(null);
-  const [ selectedSourceFilter, setSelectedSourceFilter ] = useState('');
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [selectedSourceFilter, setSelectedSourceFilter] = useState('');
 
   const selectArticle = (selectedArticle) => {
     setSelectedArticle(selectedArticle);
@@ -53,5 +54,21 @@ const Home = ({ articles }) => {
     </div>
   );
 };
+
+Home.propTypes = {
+  articles: PropTypes.arrayOf(PropTypes.shape({
+    author: PropTypes.string,
+    content: PropTypes.string,
+    description: PropTypes.string,
+    publishedAt: PropTypes.string,
+    source: PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string
+    }),
+    title: PropTypes.string,
+    url: PropTypes.string,
+    urlToImage: PropTypes.string
+  }))
+}
 
 export default Home;
