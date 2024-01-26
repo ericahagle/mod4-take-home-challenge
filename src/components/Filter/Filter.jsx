@@ -28,6 +28,10 @@ const Filter = ({ onSourceFilterChange }) => {
     onSourceFilterChange(sourceFilter);
   }, [sourceFilter, onSourceFilterChange]);
 
+  if (error) {
+    return <div className='error-message'>{error}</div>;
+  }
+
   return (
     <div className='Filter'>
       <label htmlFor='select-source'>Filter By Source
