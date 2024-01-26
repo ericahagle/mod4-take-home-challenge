@@ -3,7 +3,18 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 20px;
+  font-family: 'Montserrat', sans-serif;
 }
+
+.article-link {
+  text-decoration: none;
+}
+
+.select {
+  margin-left: 10px;
+}
+
+
 
 
 /* MEDIUM BREAKPOINT */
