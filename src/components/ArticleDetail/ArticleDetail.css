@@ -1,0 +1,21 @@
+.ArticleDetail {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.detail-image {
+  padding: 20px;
+}
+
+.detail-title, .detail-content, .detail-author, .detail-date {
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.detail-author, .detail-date {
+  margin-top: -10px;
+  text-align: left;
+  font-style: italic;
+}
