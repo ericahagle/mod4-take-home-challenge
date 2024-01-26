@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './ArticlePreview.css';
 
 const ArticlePreview = ({ date, title, description, imageUrl, source }) => {
@@ -11,5 +12,14 @@ const ArticlePreview = ({ date, title, description, imageUrl, source }) => {
     </div>
   );
 };
+
+ArticlePreview.propTypes = {
+  date: PropTypes.string,
+  description: PropTypes.string,
+  imageUrl: PropTypes.string,
+  onClick: PropTypes.func,
+  source: PropTypes.string,
+  title: PropTypes.string
+}
 
 export default ArticlePreview;
