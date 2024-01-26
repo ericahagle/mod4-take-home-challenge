@@ -1,9 +1,28 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './Filter.css';
+import { getSourcesUS } from '../../apiCalls';
 
 const Filter = ({ onSourceFilterChange }) => {
   const [sourceFilter, setSourceFilter] = useState('');
+  const [sources, setSources] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    setLoading(true);
+    getSourcesUS()
+      .then(data => {
+        setSources(data.sources);
+      })
+      .catch(error => {
+        console.error(error);
+        setError(error.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      })
+  }, []);
 
   useEffect(() => {
     onSourceFilterChange(sourceFilter);
@@ -21,24 +40,11 @@ const Filter = ({ onSourceFilterChange }) => {
           }}
         >
           <option value=''>All Sources</option>
-          <option value='9to5google.com'>9to5google.com</option>
-          <option value='Associated Press'>Associated Press</option>
-          <option value='Axios'>Axios</option>
-          <option value='BBC News'>BBC News</option>
-          <option value='Business Insider'>Business Insider</option>
-          <option value='CBS News'>CBS News</option>
-          <option value='CNN'>CNN</option>
-          <option value='Deadline'>Deadline</option>
-          <option value='ESPN'>ESPN</option>
-          <option value='Financial Times'>Financial Times</option>
-          <option value='Fox News'>Fox News</option>
-          <option value='Reuters'>Reuters</option>
-          <option value='Sports Illustrated'>Sports Illustrated</option>
-          <option value='Texas.gov'>Texas.gov</option>
-          <option value='The Athletic'>The Athletic</option>
-          <option value='The Wall Street Journal'>The Wall Street Journal</option>
-          <option value='The Washington Post'>The Washington Post</option>
-          <option value='Yahoo Entertainment'>Yahoo Entertainment</option>
+          {sources.map((source) => (
+            <option key={source.name} value={source.name}>
+              {source.name}
+            </option>
+          ))}
         </select>
       </label>
     </div>
