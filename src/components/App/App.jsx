@@ -5,18 +5,18 @@ import Home from '../Home/Home';
 import ArticleDetail from '../ArticleDetail/ArticleDetail.jsx';
 import Header from '../Header/Header.jsx';
 import NotFound from '../NotFound/NotFound.jsx';
-import getTopHeadlinesUS from '../../apiCalls.js';
+import { getTopHeadlinesUS } from '../../apiCalls.js';
 
 function App() {
-  const [ articles, setArticles ] = useState([]);
-  const [ loading, setLoading ] = useState(true);
-  const [ error, setError ] = useState('');
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     setLoading(true);
     getTopHeadlinesUS()
       .then(data => {
-        setArticles(data.articles)
+        setArticles(data.articles);
       })
       .catch((error) => {
         console.error(error);
@@ -31,10 +31,10 @@ function App() {
     <main className="App">
       <Header />
       <Routes>
-        <Route path='/' element={<Home articles={articles}/>} />
+        <Route path='/' element={<Home articles={articles} />} />
         <Route path='/article/:index' element={<ArticleDetail articles={articles} />} />
         <Route path='*' element={<NotFound />} />
-	    </Routes>
+      </Routes>
     </main>
   );
 };
