@@ -5,10 +5,10 @@ const ArticlePreview = ({ date, title, description, imageUrl, source }) => {
   return (
     <div className='ArticlePreview'>
       {imageUrl && <img className='preview-image' src={imageUrl} alt={title} />}
-      <h2>{title}</h2>
-      <p>{date}</p>
-      <p>{source}</p>
-      <p>{description}</p>
+      <h2 className='preview-title'>{title}</h2>
+      <p className='preview-date'>{date}</p>
+      <p className='preview-source'>{source}</p>
+      <p className='preview-description'>{description}</p>
     </div>
   );
 };
