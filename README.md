@@ -22,7 +22,7 @@
 This application was built as a take-home challenge project for Turing School of Software and Design's Front End Web Development program, Mod 4 Intermission. We were given the duration of our Intermission week to complete and submit the project for evaluation, using the [provided spec](https://mod4.turing.edu/projects/take_home/take_home_fe).
 
 # 🎬 Preview
-
+https://github.com/ericahagle/mod4-take-home-challenge/assets/133910120/a5f766b3-e45d-4fdf-982d-5b9b69f54d3a
 
 # 🔧 Installation Instructions
 1. Clone this client repository to your local machine
