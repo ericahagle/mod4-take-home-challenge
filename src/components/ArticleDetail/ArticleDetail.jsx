@@ -28,7 +28,7 @@ const ArticleDetail = ({ articles, defaultIndex }) => {
     <div className='ArticleDetail'>
       {selectedArticle && (
         <>
-          {selectedArticle.urlToImage ? (<img className='detail-image' src={selectedArticle.urlToImage} alt={selectedArticle.title} />) : (<img className='preview-image' src={`${process.env.PUBLIC_URL}/no-image-available.jpeg`} alt='No Image Available' />)}
+          {selectedArticle.urlToImage ? (<img className='detail-image' src={selectedArticle.urlToImage} alt={selectedArticle.title} />) : (<img className='preview-image' src={`${process.env.PUBLIC_URL}/no-image-available.jpg`} alt='No Image Available' />)}
           <p className='detail-date'>Publish Date: {selectedArticle.publishedAt}</p>
           <h2 className='detail-title'>{selectedArticle.title}</h2>
           <p className='detail-author'>By {selectedArticle.author}</p>
